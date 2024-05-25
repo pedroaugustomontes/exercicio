@@ -1,0 +1,319 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Estilos para o corpo do documento */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: linear-gradient(to right, #71857a 0%, #526c6c 50%, #6c6c52 100%);
+}
+
+/* Estilos para containers genéricos */
+.container,
+.carousel-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilos para o cabeçalho */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Animação de fade-in para o cabeçalho */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Estilos para o container de imagem do cabeçalho */
+.header .img-container img {
+  width: 200px;
+  height: 200px;
+  border-image: linear-gradient(to right, #ff0000, #00ff00) 10px slice;
+  border-radius: 45%;
+  animation: rotation 10s linear infinite;
+}
+
+/* Animação de rotação para a imagem do cabeçalho */
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estilos para a navegação do cabeçalho */
+.header nav {
+  display: flex;
+}
+
+/* Estilos para os itens da navegação */
+.header nav li {
+  margin-left: 20px;
+}
+
+/* Estilos para os links da navegação */
+.header nav a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 10%;
+  font-weight: bold;
+  color: linear-gradient(to right, #aefcce 0%, #b4f9fa 50%, #f3f4a9 100%);
+  transition: background-color 0.3s ease;
+}
+
+/* Estilos para o hover dos links da navegação */
+.header nav a:hover {
+  background-color: linear-gradient(to right, #5ebe86 0%, #48c5c7 50%, #b7b952 100%);
+}
+
+/* Estilos para o container de imagem genérico */
+.img-container {
+  display: flex;
+}
+
+/* Estilos para a navegação */
+nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para os links da navegação */
+nav a {
+  border-radius: 10%;
+  text-decoration: none;
+  color: linear-gradient(to right, #aefcce 0%, #b4f9fa 50%, #f3f4a9 100%);
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+nav a:hover {
+  background: linear-gradient(to right, #5ebe86 0%, #48c5c7 50%, #b7b952 100%);
+}
+
+.box-1 {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.box-1 h1 {
+  font-size: 3em;
+  color: #fff; 
+  margin-top: 40px;
+  margin-bottom: 10px;
+  animation: textGlow 3s infinite alternate;
+}
+
+@keyframes textGlow {
+  from {
+    text-shadow: 0 0 0 #fff; 
+  }
+  to {
+    text-shadow: 0 0 10px #f0f0f0; 
+  }
+}
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.bootcamp {
+  width: calc(25% - 20px);
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.bootcamp img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.bootcamp h2 {
+  padding: 15px;
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.bootcamp p {
+  padding: 0 15px 15px;
+  color: #666;
+}
+
+.bootcamp a {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.bootcamp a:hover {
+  background-color: #444;
+}
+
+.bootcamp:hover {
+  transform: translateY(-5px);
+}
+
+/* General carousel styles */
+.carousel {
+  /* Adjust the width as needed */
+  width: 60%;
+  margin: 0 auto; /* Center the carousel on the page */
+  overflow: hidden; /* Hide overflow for responsive images */
+}
+
+.carousel-indicators {
+  /* Style the carousel indicators */
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 20px;
+  margin-bottom: 15px;
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  margin: 0 4px;
+  width: 10px;
+  height: 10px;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.carousel-indicators li.active {
+  opacity: 1;
+}
+
+.carousel-inner {
+  /* Style the carousel inner container */
+  position: relative;
+}
+
+.carousel-item {
+  /* Style each carousel slide */
+  display: none;
+  position: relative;
+  transition: transform 0.6s ease;
+}
+
+.carousel-item.active {
+  display: block;
+  transform: translateX(0);
+}
+
+.carousel-item img {
+  /* Style the carousel images */
+  display: block;
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.carousel-caption {
+  /* Style the carousel captions */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.carousel-caption h5 {
+  /* Style the caption heading */
+  margin-bottom: 10px;
+}
+
+.carousel-caption p {
+  /* Style the caption paragraph */
+  line-height: 1.6;
+}
+
+/* Carousel controls */
+.carousel-control-prev,
+.carousel-control-next {
+  /* Style the carousel control buttons */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  cursor: pointer;
+  padding: 15px;
+  color: #fff;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .carousel-indicators {
+    display: none;
+  }
+
+  .carousel-caption {
+    bottom: auto;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+  }
+}
+
+
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
